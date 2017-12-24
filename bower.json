@@ -1,0 +1,26 @@
+{
+  "name": "angular-shop-app",
+  "homepage": "https://github.com/burhan-demo-apps/demo-angular-shop",
+  "authors": [
+    "Burhan Otour <burhan.a.otour@hotmail.com>"
+  ],
+  "description": "demo app using angularJS to build an online shop",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "demo",
+    "shop-app",
+    "burhan-otour"
+  ],
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.8"
+  }
+}
