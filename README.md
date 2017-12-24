@@ -1,3 +1,5 @@
+![alt text](https://travis-ci.org/burhan-demo-apps/demo-angular-shop.svg?branch=master)
+
 ## demo-angular-shop
 A demo app for a shop service built using AngularJS
 
