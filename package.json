@@ -17,7 +17,8 @@
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^1.0.0"
   },
   "keywords": [
     "angular",
@@ -30,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/burhan-demo-apps/demo-angular-shop/issues"
   },
-  "homepage": "https://github.com/burhan-demo-apps/demo-angular-shop#readme"
+  "homepage": "https://github.com/burhan-demo-apps/demo-angular-shop#readme",
+  "dependencies": {
+    "grunt-contrib-compass": "^1.1.1"
+  }
 }

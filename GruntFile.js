@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     'use strict';
     // Declare JS dependencies and third-party libraries required
     var jsVendorSourceFiles = [
@@ -21,6 +21,16 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            styles: {
+                files: ['app/sass/*.scss'],
+                tasks: ['compass:dev']
+            },
+            scripts: {
+                files: jsAppSourceFiles,
+                tasks: ['concat:dev']
+            }
+        },
         jshint: {
             options: {
                 jshintrc: 'js-src/.jshintrc'
@@ -39,6 +49,24 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        compass: {
+            clean: {
+                options: {
+                    clean: true
+                }
+            },
+            dev: {
+                options: {
+                    environment: 'development'
+                }
+            },
+            prod: {
+                options: {
+                    environment: 'production',
+                    outputStyle: 'compressed'
+                }
+            }
+        },
         uglify: {
             prod: {
                 files: [
@@ -55,8 +83,21 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'concat:dev']);
-    grunt.registerTask('build-prod', ['jshint', 'uglify:prod']);
+    grunt.registerTask('default', [
+     //   'jshint',
+        'compass:clean',
+        'compass:dev',
+        'concat:dev'
+    ]);
+
+    grunt.registerTask('build-prod', [
+        //'jshint',
+        'compass:clean',
+        'compass:prod',
+        'uglify:prod'
+    ]);
 };
