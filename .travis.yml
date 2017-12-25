@@ -1,6 +1,8 @@
 language: node_js
 before_script:
-  - npm install -g grunt-cli
+  - npm install ruby --save
+  - npm install -g grunt --save
+  - gem install compass
 script: grunt
 node_js:
   - "node"
