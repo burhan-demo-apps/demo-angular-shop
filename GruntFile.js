@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'app/js/*.js',
+                src: ['bower_components/angular/angular.min.js', 'app/js/*.js'],
                 dest: 'build/js/app.js'
             }
         }
